@@ -1284,8 +1284,12 @@ var decreaseListLevel = function ( frag ) {
 proto._ensureBottomLine = function () {
     var body = this._body,
         last = body.lastElementChild;
-    if ( !last ||
-            last.nodeName !== this._config.blockTag || !isBlock( last ) ) {
+
+    // Socrata Edit:
+    // This used to insert an extra block unless the last element was the same
+    // as the default block. Now it only adds if there is no block level last
+    // element.
+    if ( !last || !isBlock( last ) ) {
         body.appendChild( this.createDefaultBlock() );
     }
 };
