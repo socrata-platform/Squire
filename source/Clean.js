@@ -98,6 +98,7 @@ var stylesRewriters = {
 
         return newTreeBottom || span;
     },
+    P: replaceWithTag( 'DIV' ),
     STRONG: replaceWithTag( 'B' ),
     EM: replaceWithTag( 'I' ),
     STRIKE: replaceWithTag( 'S' ),
