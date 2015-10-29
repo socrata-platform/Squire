@@ -246,12 +246,15 @@ var keyHandlers = {
         if ( nodeAfterSplit.nodeType === TEXT_NODE ) {
             nodeAfterSplit = nodeAfterSplit.parentNode;
         }
-        var doc = self._doc,
-            body = self._body;
-        if ( nodeAfterSplit.offsetTop + nodeAfterSplit.offsetHeight >
-                ( doc.documentElement.scrollTop || body.scrollTop ) +
-                body.offsetHeight ) {
-            nodeAfterSplit.scrollIntoView( false );
+
+        if ( _self._config.scrollIntoView ) {
+            var doc = self._doc,
+                body = self._body;
+            if ( nodeAfterSplit.offsetTop + nodeAfterSplit.offsetHeight >
+                    ( doc.documentElement.scrollTop || body.scrollTop ) +
+                    body.offsetHeight ) {
+                nodeAfterSplit.scrollIntoView( false );
+            }
         }
     },
     backspace: function ( self, event, range ) {

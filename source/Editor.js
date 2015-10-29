@@ -149,7 +149,8 @@ proto.setConfig = function ( config ) {
             ul: null,
             ol: null,
             li: null
-        }
+        },
+        scrollIntoView: true
     }, config );
 
     // Users may specify block tag in lower case
