@@ -1285,7 +1285,7 @@ proto._ensureBottomLine = function () {
     var body = this._body,
         last = body.lastElementChild;
 
-    const lastIsList = last.nodeName === 'OL' || last.nodeName === 'UL'
+    var lastIsList = last.nodeName === 'OL' || last.nodeName === 'UL'
     // Socrata Edit:
     // This used to insert an extra block unless the last element was the same
     // as the default block. Now it only adds if there is no block level last
